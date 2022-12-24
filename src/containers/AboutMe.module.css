@@ -1,0 +1,103 @@
+.container {
+  padding: 2em;
+}
+
+.aboutmeRelative {
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content auto;
+  grid-gap: 1em;
+  font-family: "Teko", sans-serif;
+  animation: slide-from-left 1500ms;
+}
+
+.introduction {
+  position: relative;
+  animation: slide-from-right 1500ms;
+}
+
+.titleContainer {
+  position: absolute;
+  top: 0;
+  left: 8em;
+}
+
+.profilePic {
+  height: 10em;
+}
+
+.description {
+  margin-top: 6em;
+  color: rgb(148, 148, 148);
+  font-style: italic;
+}
+
+.name {
+  color: #ab60ff;
+}
+
+.paragraph {
+  color: rgb(223, 223, 223);
+}
+
+.contactIcons {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+
+.icon {
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+@media (min-width: 910px) {
+  .container {
+    display: grid;
+    grid-template-columns: 500px auto;
+    grid-gap: 1em;
+  }
+
+  .profilePic {
+    height: 20em;
+  }
+
+  .titleContainer {
+    left: 18em;
+  }
+
+  .contactIcons {
+    justify-content: flex-start;
+  }
+
+  .icon:first-child {
+    padding: 0.5em 0.5em 0.5em 0;
+  }
+
+  .paragraph {
+    padding-right: 2em;
+  }
+}
+
+@keyframes slide-from-left {
+  0% {
+    left: -5em;
+    opacity: 0;
+  }
+
+  100% {
+    left: 0em;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-from-right {
+  0% {
+    right: -5em;
+    opacity: 0;
+  }
+  100% {
+    right: 0em;
+    opacity: 1;
+  }
+}

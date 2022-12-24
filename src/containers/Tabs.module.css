@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+
+@media (min-width: 800px) {
+  .container {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 0) 0%,
+      rgba(38, 38, 38, 0.7539390756302521) 20%,
+      rgba(38, 38, 38, 0.9640231092436975) 35%,
+      rgba(38, 38, 38, 1) 50%,
+      rgba(38, 38, 38, 0.9556197478991597) 65%,
+      rgba(38, 38, 38, 0.7063200280112045) 80%,
+      rgba(252, 176, 69, 0) 100%
+    );
+  }
+}

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  gap: 1em;
+  padding: 1em 2em;
+  color: silver;
+  justify-content: space-between;
+}
+.portrait {
+  height: 3em;
+}
+
+.linksContainer {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
+  color: silver;
+}
+
+.linksContainer a {
+  color: silver;
+  text-decoration: none;
+}
