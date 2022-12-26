@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  max-height: 82vh;
+  max-width: 100%;
+  animation: slide-from-right 1000ms;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+@keyframes slide-from-right {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

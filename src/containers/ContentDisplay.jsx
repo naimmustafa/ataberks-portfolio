@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 
 import s from "./ContentDisplay.module.css";
 
-const ContentDisplay = ({ images, count }) => {
+const ContentDisplay = ({ images, count, setModalIndex }) => {
   const totalAspectRatio = images.reduce((acc, curr) => {
     acc += curr.ratio;
     return acc;
@@ -45,6 +45,7 @@ const ContentDisplay = ({ images, count }) => {
           ]);
         }, 200);
       } else {
+        handleResize();
         clearInterval(interval);
       }
     }, count * 10);
@@ -64,8 +65,9 @@ const ContentDisplay = ({ images, count }) => {
       style={{ gap: `${3 / (images.length - 1)}em` }}
     >
       {divRef.current &&
-        imagesToDisplay.map(({ image, id }) => (
+        imagesToDisplay.map(({ image, id, place }) => (
           <img
+            onClick={() => setModalIndex(place)}
             key={id}
             className={s.mainImage}
             src={image}
@@ -83,57 +85,41 @@ const chunkArray = (array, chunkSize) => {
   let currentChunk = [];
   let counter = 1;
 
-  if (chunkSize === 3) {
-    for (let i = 0; i < array.length; i++) {
-      currentChunk.push(array[i]);
+  for (let i = 0; i < array.length; i++) {
+    currentChunk.push({ ...array[i], place: i });
 
-      if (counter === chunkSize) {
-        counter = 1;
-        chunks.push(currentChunk);
-        currentChunk = [];
-      } else {
-        if (i % 5 === 2) {
-        } else {
-          counter++;
-        }
-      }
-    }
-
-    if (currentChunk.length > 0) {
+    if (counter === chunkSize) {
+      counter = 1;
       chunks.push(currentChunk);
-    }
-  } else {
-    for (let i = 0; i < array.length; i++) {
-      currentChunk.push(array[i]);
-
-      if (counter === chunkSize) {
-        counter = 1;
-        chunks.push(currentChunk);
-        currentChunk = [];
+      currentChunk = [];
+    } else {
+      if (i % 7 === 2) {
       } else {
         counter++;
       }
     }
+  }
 
-    if (currentChunk.length > 0) {
-      chunks.push(currentChunk);
-    }
+  if (currentChunk.length > 0) {
+    chunks.push(currentChunk);
   }
 
   return chunks;
 };
 
-const ContentDisplayContainer = ({ images }) => {
+const ContentDisplayContainer = ({ images, setModalIndex }) => {
   const [chunkSize, setChunkSize] = useState(1);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const getChunkSize = () => {
-    if (screenWidth <= 800) {
-      setChunkSize(1);
-    } else if (800 < screenWidth && screenWidth <= 1400) {
-      setChunkSize(3);
-    } else if (screenWidth >= 1400) {
-      setChunkSize(4);
+    switch (true) {
+      case screenWidth <= 800:
+        return setChunkSize(1);
+      case 800 < screenWidth && screenWidth <= 1400:
+        return setChunkSize(3);
+      case screenWidth >= 1400:
+        return setChunkSize(4);
+      default:
     }
   };
 
@@ -155,7 +141,12 @@ const ContentDisplayContainer = ({ images }) => {
   const chunkedImages = chunkArray(images, chunkSize);
 
   return chunkedImages.map((chunk, index) => (
-    <ContentDisplay key={chunk[0].id} images={chunk} count={index} />
+    <ContentDisplay
+      key={chunk[0].id}
+      images={chunk}
+      count={index}
+      setModalIndex={setModalIndex}
+    />
   ));
 };
 

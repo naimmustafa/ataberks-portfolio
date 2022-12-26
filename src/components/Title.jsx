@@ -4,7 +4,7 @@ const sizeMap = {
   s: 12,
   m: 18,
   l: 20,
-  xl: 30,
+  xl: 40,
 };
 
 const typeMap = {

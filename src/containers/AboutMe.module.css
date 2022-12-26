@@ -16,10 +16,21 @@
   animation: slide-from-right 1500ms;
 }
 
+.title {
+  font-size: 25pt;
+  line-height: 25pt;
+  font-weight: bold;
+}
+
+.nameTitle {
+  composes: title;
+  color: #ab60ff;
+}
+
 .titleContainer {
   position: absolute;
-  top: 0;
-  left: 8em;
+  top: 0.5em;
+  left: 7.85em;
 }
 
 .profilePic {
@@ -30,10 +41,6 @@
   margin-top: 6em;
   color: rgb(148, 148, 148);
   font-style: italic;
-}
-
-.name {
-  color: #ab60ff;
 }
 
 .paragraph {
@@ -49,12 +56,18 @@
 .icon {
   cursor: pointer;
   padding: 0.5em;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.link {
+  color: silver;
 }
 
 @media (min-width: 910px) {
   .container {
     display: grid;
-    grid-template-columns: 500px auto;
+    grid-template-columns: 550px auto;
     grid-gap: 1em;
   }
 
@@ -62,8 +75,20 @@
     height: 20em;
   }
 
+  .title {
+    font-size: 35pt;
+    line-height: 30pt;
+    font-weight: bold;
+  }
+
+  .nameTitle {
+    composes: title;
+    color: #ab60ff;
+  }
+
   .titleContainer {
-    left: 18em;
+    top: 0.5em;
+    left: 17em;
   }
 
   .contactIcons {

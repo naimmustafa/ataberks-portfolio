@@ -8,6 +8,7 @@
 .mainImage {
   width: auto;
   animation: slide-from-bottom 1000ms;
+  cursor: pointer;
 }
 
 .tinyImages {

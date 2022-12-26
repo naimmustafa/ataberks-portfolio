@@ -11,10 +11,12 @@ const AboutMe = () => {
       <div className={s.aboutmeRelative}>
         <img className={s.profilePic} src={aboutme} />
         <div className={s.titleContainer}>
-          <Title size="xl">I'm</Title>
-          <Title size="xl" className={s.name}>
+          <div className={s.title} size="xl">
+            I'm
+          </div>
+          <div size="xl" className={s.nameTitle}>
             Ataberk Kurtulan
-          </Title>
+          </div>
         </div>
         <div className={s.description}>
           <div>UI/UX Designer</div>
@@ -33,10 +35,25 @@ const AboutMe = () => {
           feedback.
         </p>
         <div className={s.contactIcons}>
-          <BsBehance className={s.icon} />
-          <BsInstagram className={s.icon} />
-          <BsEnvelope className={s.icon} />
-          <BsBrush className={s.icon} />
+          <a
+            className={s.link}
+            href="https://www.behance.net/ataberkrtln"
+            target="_blank"
+          >
+            <BsBehance className={s.icon} />
+          </a>
+          <a className={s.link} href="https://www.instagram.com/ataberkrtln/">
+            <BsInstagram className={s.icon} />
+          </a>
+          <a
+            className={s.link}
+            href="mailto:ataberkkurtulan@gmail.com?subject=Contact Request from Portfolio"
+          >
+            <BsEnvelope className={s.icon} />
+          </a>
+          <a className={s.link} href="https://ataberkrtln.artstation.com/">
+            <BsBrush className={s.icon} />
+          </a>
         </div>
       </div>
     </div>
