@@ -25,14 +25,16 @@ const AboutMe = () => {
       </div>
       <div className={s.introduction}>
         <p className={s.paragraph}>
-          I am a skilled and experienced UI/UX designer based in London, with a
-          passion for creating intuitive and engaging user experiences. I have a
-          strong understanding of web functionality, user interfaces, and site
-          architecture and am proficient in various design tools. I am
-          constantly seeking ways to improve my skills and stay up-to-date in
-          the industry, including exploring 3D sculpting programs such as Zbrush
-          and Blender. I am a creative, enthusiastic team player who is open to
-          feedback.
+          Hi there, my name is Ataberk Kurtulan. As a UI/UX designer based in
+          London, I am skilled in creating intuitive and visually appealing
+          designs for a variety of projects, including websites, mobile apps,
+          and software interfaces. I hold a degree in Graphic Design and have a
+          strong passion for the field. I have gained valuable experience in the
+          industry through my past roles, where I was able to utilize my strong
+          eye for aesthetics and proficient use of design tools such as Adobe
+          Creative Suite, Sketch and FIgma to produce high-quality work. I am dedicated
+          to continuously improving my skills and staying up to date with the
+          latest design trends and techniques.
         </p>
         <div className={s.contactIcons}>
           <a
